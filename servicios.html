@@ -206,33 +206,64 @@
 
 <script>
 
-const menuBtn =
-document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
+const mainNav = document.getElementById("mainNav");
+const header = document.querySelector(".header");
 
-const mainNav =
-document.getElementById("mainNav");
+/* ==========================
+   MENÚ HAMBURGUESA
+========================== */
 
 menuBtn.addEventListener("click", () => {
 
     mainNav.classList.toggle("show");
-
     document.body.classList.toggle("menu-open");
 
 });
 
 document.addEventListener("click", (e) => {
 
-    if(
-        !mainNav.contains(e.target)
-        &&
+    if (
+        !mainNav.contains(e.target) &&
         !menuBtn.contains(e.target)
-    ){
+    ) {
 
         mainNav.classList.remove("show");
-
         document.body.classList.remove("menu-open");
 
     }
+
+});
+
+/* ==========================
+   HEADER AUTO HIDE
+========================== */
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 20) {
+
+        header.classList.remove("hide");
+        lastScroll = currentScroll;
+        return;
+
+    }
+
+    if (currentScroll > lastScroll) {
+
+        header.classList.add("hide");
+
+    } else {
+
+        header.classList.remove("hide");
+
+    }
+
+    lastScroll = currentScroll;
 
 });
 
