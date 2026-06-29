@@ -112,6 +112,21 @@ img{
         transparent
     );
 
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        padding .35s ease;
+
+    transform:translateY(0);
+
+}
+
+/* Oculto */
+
+.header.hide{
+
+    transform:translateY(-120%);
+
 }
 
 .logo{
