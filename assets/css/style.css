@@ -452,63 +452,154 @@ img{
    SERVICES
 ======================= */
 
-.services-grid{
+.services-showcase{
 
-    display:grid;
+    display:flex;
+    flex-direction:column;
+    gap:120px;
 
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:25px;
+    margin-top:80px;
 
 }
 
-.service-card{
+.service-row{
 
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.05),
-        rgba(255,255,255,.02)
-    );
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
 
-    border:1px solid var(--border);
+    align-items:center;
+
+}
+
+.service-row.reverse{
+
+    direction:rtl;
+
+}
+
+.service-row.reverse>*{
+
+    direction:ltr;
+
+}
+
+.service-image{
+
+    position:relative;
+
+}
+
+.service-image img{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
 
     border-radius:28px;
 
-    padding:35px;
+    border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(15px);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
 
-    transition:.4s;
-
-}
-
-.service-card:hover{
-
-    transform:
-    translateY(-10px);
-
-    border-color:var(--gold);
+    transition:.5s;
 
 }
 
-.icon{
+.service-image img:hover{
 
-    font-size:42px;
-
-    margin-bottom:20px;
+    transform:scale(1.03);
 
 }
 
-.service-card h3{
+.service-text span{
+
+    color:var(--gold);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    display:block;
+
+    margin-bottom:18px;
+
+}
+
+.service-text h3{
+
+    font-size:44px;
+
+    font-weight:800;
+
+    margin-bottom:22px;
+
+    line-height:1.2;
+
+}
+
+.service-text p{
+
+    color:var(--gray);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+}
+
+.service-text ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.service-text li{
+
+    color:white;
 
     margin-bottom:12px;
 
-    font-size:24px;
+    font-size:17px;
+
+    padding-left:28px;
+
+    position:relative;
 
 }
 
+.service-text li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--gold);
+
+    font-weight:700;
+
+}
+
+.service-text .btn-gold{
+
+    margin-top:35px;
+
+    display:inline-flex;
+
+}
 /* =======================
    EVENTOS
 ======================= */
@@ -1805,6 +1896,76 @@ img{
         display:flex;
 
     }
+
+        .service-row{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .service-row.reverse{
+
+        direction:ltr;
+
+    }
+
+    .service-image{
+
+        order:-1;
+
+    }
+
+    .service-image img{
+
+        height:340px;
+
+    }
+
+    .service-text{
+
+        text-align:center;
+
+    }
+
+    .service-text li{
+
+        text-align:left;
+
+    }
+
+    .service-text h3{
+
+        font-size:34px;
+
+    }
+
+
+    .services-showcase{
+
+        gap:80px;
+
+    }
+
+    .service-image img{
+
+        height:280px;
+
+    }
+
+    .service-text h3{
+
+        font-size:28px;
+
+    }
+
+    .service-text p{
+
+        font-size:16px;
+
+    }
+
 
 
 }
